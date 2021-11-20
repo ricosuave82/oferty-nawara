@@ -1,0 +1,10 @@
+<li class="selected active">
+<a role="option" class="dropdown-item active selected" id="bs-select-3-0" tabindex="0" aria-setsize="5" aria-posinset="1" aria-selected="true">
+<span class="text">Activities</span></a></li>
+{% for activity in activities %}
+<li><a role="option" class="dropdown-item" id="bs-select-3-{{forloop.counter}}" tabindex="0" aria-setsize="5" aria-posinset="{{forloop.counter+1}}"><span class="text">{{activity.ActivityID}}</span></a></li>
+{% endfor %}
+
+
+
+

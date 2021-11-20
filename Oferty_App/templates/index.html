@@ -1,0 +1,1495 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700">
+    <!-- Code by Angela Delise 
+    https://codepen.io/angeladelise/pen/JjXKOgM -->
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   
+    <link rel="stylesheet" href={% static 'css/navbar.css' %} />
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   
+   
+   
+   
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.5/chosen.jquery.min.js" integrity="sha512-rMGGF4wg1R73ehtnxXBt5mbUfN9JUJwbk21KMlnLZDJh7BkPmeovBuddZCENJddHYYMkCh9hPFnPmS9sspki8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.5/chosen.min.css" integrity="sha512-yVvxUQV0QESBt1SyZbNJMAwyKvFTLMyXSyBHDO4BG5t7k/Lw34tyqlSDlKIrIENIzCl+RVUNjmCPG+V/GMesRw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     -->
+    
+    <!-- <script src={% static 'js/chosen.jquery.min.js' %}  type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href={% static 'css/chosen.min.css' %} /> -->
+
+
+  </head>
+  <style>
+    .dropdown-submenu {
+      position: relative;
+    }
+    
+    .dropdown-submenu .dropdown-menu {
+      top: 0;
+      left: auto;
+      right: 198px;
+      margin-top: -1px;
+      z-index: 20000;
+    }
+  </style>
+  <body >
+
+    <!-- Sidbar -->
+    <navbar class="nav">
+    
+      <ul class="nav__list">
+        <div class="first-nav-item"></div>
+        <li class="nav__item ">
+          <a href="#">
+               <img src="{% static  'images/nav_itme1.png' %}"/>
+            <!-- <p class="nav__itemlabel">Home</p> -->
+          </a>
+        </li>
+        <!-- <a href="../static/images/nav_itme1.png"></a> -->
+  
+        <li class="nav__item">
+          <a href="#" >
+                <img src="{% static  'images/nav_item2.png' %}"  />
+           </a>
+        </li>
+  
+        <li class="nav__item">
+          <a href="#">
+            <img src="{% static  'images/nav_item3.png' %}" />
+            <!-- <svg viewBox="0 0 512 512" width="100" title="chart-line">
+              <path d="M496 384H64V80c0-8.84-7.16-16-16-16H16C7.16 64 0 71.16 0 80v336c0 17.67 14.33 32 32 32h464c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16zM464 96H345.94c-21.38 0-32.09 25.85-16.97 40.97l32.4 32.4L288 242.75l-73.37-73.37c-12.5-12.5-32.76-12.5-45.25 0l-68.69 68.69c-6.25 6.25-6.25 16.38 0 22.63l22.62 22.62c6.25 6.25 16.38 6.25 22.63 0L192 237.25l73.37 73.37c12.5 12.5 32.76 12.5 45.25 0l96-96 32.4 32.4c15.12 15.12 40.97 4.41 40.97-16.97V112c.01-8.84-7.15-16-15.99-16z" />
+            </svg>
+            <p class="nav__itemlabel">Trends</p> -->
+          </a>
+        </li>
+  
+        <li class="nav__item">
+          <a href="#">
+            <img src="{% static  'images/nav_item4.png' %}" />
+            <!-- <svg viewBox="0 0 576 512" width="100" title="inbox">
+              <path d="M567.938 243.908L462.25 85.374A48.003 48.003 0 0 0 422.311 64H153.689a48 48 0 0 0-39.938 21.374L8.062 243.908A47.994 47.994 0 0 0 0 270.533V400c0 26.51 21.49 48 48 48h480c26.51 0 48-21.49 48-48V270.533a47.994 47.994 0 0 0-8.062-26.625zM162.252 128h251.497l85.333 128H376l-32 64H232l-32-64H76.918l85.334-128z" />
+            </svg>
+            <p class="nav__itemlabel">Messages</p> -->
+          </a>
+        </li>
+  
+      </ul>
+    </navbar>
+
+    <!-- Main Content -->
+    <div  class="main-content p-4 mx-5 p-md-5">
+        
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand COLOR text-uppercase main-heading"  href="#">Items on the quotation</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                
+                <li class="nav-item active">
+                    <img src="{% static 'images/profile_pic.png' %}"/>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle COLOR" style="font-size: 16px;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    beautifulbutterfly101
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+               
+              </ul>
+              
+            </div>
+          </nav>
+
+          <!-- child parent dropdown -->
+          <!-- <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown button0
+            </button>
+            <div class="dropdown-menu" data-toggle="dropdown" aria-labelledby="dropdownMenuButton0">
+              
+
+              
+              <div class="dropdown-item">
+                <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown button1
+              </button>
+              <div class="dropdown-menu" data-toggle1="dropdown" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#123">two</a>
+                <a class="dropdown-item" href="#123">three</a>
+                <a class="dropdown-item" href="#123">four</a>
+              </div>
+              <a class="dropdown-item" href="#"></a>
+            </div>
+            </div>
+         
+
+              
+
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown2" aria-haspopup="true" aria-expanded="false">
+                Dropdown button2
+              </button>
+              <div class="dropdown-menu" data-toggle="dropdown2" aria-labelledby="dropdownMenuButton2">
+                <a class="dropdown-item" href="#456">four</a>
+                <a class="dropdown-item" href="#456">five</a>
+                <a class="dropdown-item" href="#456">Six</a>
+              </div>
+              <a class="dropdown-item" href="#"></a>
+
+
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown button3
+              </button>
+              <div class="dropdown-menu" data-toggle="dropdown" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#789">Seven</a>
+                <a class="dropdown-item" href="#789">Eight</a>
+                <a class="dropdown-item" href="#789">Nine</a>
+              </div>
+              <a class="dropdown-item" href="#"></a>
+
+            </div>
+   
+          </div> -->
+        
+          <!-- List based dropdown -->
+          <!-- <div class="container">
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Tutorials
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <div class="dropdown-submenu container">
+                  <a class="test" tabindex="-1" href="#">New dropdown <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <div class="container"><a tabindex="-1" href="#">2nd level dropdown</a></div>
+                    <div class="container"><a tabindex="-1" href="#">2nd level dropdown</a></div>
+                  </ul>
+                </div>
+                <div class="dropdown-submenu container">
+                  <a class="test" tabindex="-1" href="#">New dropdown <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <div class="container"><a tabindex="-1" href="#">4nd level dropdown</a></div>
+                    <div class="container"><a tabindex="-1" href="#">5nd level dropdown</a></div>
+                  </ul>
+                </div>
+              
+              </ul>
+            </div>
+          </div> -->
+          
+          
+
+           <div class="row mx-auto">
+            <div class="col-md-12">
+            <form 
+            action="" method="POST" 
+            id="indexForm"
+            data-activites-url="{% url 'ajax_load_activities' %}"
+            data-subactivites-url="{% url 'ajax_load_subactivities' %}"
+            >
+                <div class="row">
+
+            
+                    <div class="input-group col-md-6 col-xl-3 mt-4 ">
+                        <div class="input-group-prepend col-md-2 col-sm-1 col-1">
+                          <button class="btn btn-outline-secondary select-btn  " type="button">
+                            <img src="{% static 'images/dropdown1.png' %}" class="mx-auto"/>
+                          </button>
+                        </div>
+                        <select class=" col-md-10 col-sm-5 col-10" data-live-search="true" tabindex="2" id="buildingType-box">
+                          <option selected disabled>Building Types</option>
+                          {% for type in buildingTypes %}
+                          <option value={{type.BuildingTypeID}} >{{type}}</option>
+                          {% endfor %}
+                        </select>
+                      </div>      
+                      
+                      
+
+                      <div class="input-group col-md-6 col-xl-3 mt-4 ">
+                          <button class="btn col-12 add-activity-btn text-uppercase px-4 " type="button" onclick="insert_Row()" >
+                            Add a new activity
+                          </button>
+                      </div>
+
+                      <div class="input-group col-md-6 col-xl-3 mt-4 ml-auto">
+                        <button class="btn col-12 add-activity-btn text-uppercase px-4 " type="button"  id="btnExport"  >
+                          Export PDF
+                        </button>
+                      </div>
+                </div>
+            </form>
+            </div>
+           
+
+           </div>
+      <div class="row mx-auto">
+        <div class="col-md-12">
+           
+            <table id="tblCustomers" class="table table-hover table-responsive mt-5" 
+              
+              >
+                <thead class="">
+                    <tr class="">
+                        <th scope="col" class="id-table table-left-heading">#</th>
+                        <th scope="col" class="table-heading" >Quantity</th>
+                        <th scope="col" class="table-heading">Description</th>
+                        <th scope="col" class="table-heading">Norm</th>
+                        <th scope="col" class="table-heading">Price per hour</th>
+                        <th scope="col" class="table-heading">Hours Number</th>
+                        <th scope="col" class="table-heading">Work</th>
+                        <th scope="col" class="table-heading">Material unit price</th>
+                        <th scope="col" class="table-heading">Total Material</th>
+                        <th scope="col" class="table-right-heading">Total</th>
+                    </tr>
+                    
+                </thead>
+                
+                
+                
+                
+
+                <!-- <tbody class="table_output">
+
+                  {% for building in buildingType %}
+                  <tr>
+                    <td colspan='9' align="left" style="padding-left:20px;" ><br /><h2  >{{building.buildingName}}:{{building.buildingTypeLength}}</h2></td>
+                    <td colspan='1'><input id="{{building.buildingName}}_{{building.buildingTypeLength}}" class="BuildingType{{building.buildingName}}"  value='{{building.buildingTypeLength}}' hidden/></td> 
+                  </tr>
+                    {% for item in buildingItem %}
+                      {% if building.id == item.buildingType.id %}
+
+                       <tr  >
+                        <td colspan='2' align="left" style="padding-left:20px;" class="active"><b>Room {{item.buildingItemLength}}</b></td>
+                        <td colspan='6'><input id="{{building.buildingName}}_{{building.buildingTypeLength}}_roomNum{{item.buildingItemLength}}" value='1' hidden/></td>
+                        <td colspan="1">
+                        <select   id='{{building.buildingName}}_{{building.buildingTypeLength}}-templateBox_R{{item.buildingItemLength}} ' onchange="RoomTemplateList(this,{{item.buildingItemLength}})" data-live-search="true" tabindex="-98" >
+                          <option value="" selected>Choose Template</option> 
+                          {% for template in templates %}
+                          <option value="{{ template.TemplateID }}" >{{ template.Name }}</option> 
+                          {% endfor %}
+                        </select></td>
+
+                        <td colspan="1">
+                          <div class="container">
+                             <div class="dropdown">
+                              <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Choose Activity
+                              <span class="caret"></span></button>
+                              <ul class="dropdown-menu " id="myDropdown-forR{{item.buildingItemLength}}" >
+                                <input type="text" placeholder="Search.." id="mySearchInput-forR{{item.buildingItemLength}}"  onkeyup="getID(this)">
+                                
+                                {% for category in categories %}
+                                <div class="dropdown-submenu container " >
+                                  <a role="option" class="test dropdown-item" tabindex="-1" id=""><span class="caret">{{category.Name}}</span></a>
+                                  <ul class="dropdown-menu">
+                                    {% for activity in activities %}
+                                    {% if category.ActivityCategoryID == activity.ActivityCategoryID.ActivityCategoryID %}
+                                    <a role="option" class="dropdown-item" tabindex="-1" id='{{building.buildingName}}_{{building.buildingTypeLength}}-activityBox_R{{item.buildingItemLength}}/{{activity.ActivityID}}' value="" onclick="RoomActivity(this,item.buildingItemLength)"  >{{activity.Name}}</a>
+                                    {% endif %}
+                                    {% endfor %}
+                                  </ul>
+                                </div>  
+                                {% endfor %}
+
+                              </ul>
+                            </div>
+                          </div>
+                        </td>                     
+                      </tr>
+                      {% for row in itemRowData %}
+                        {% if item.id == row.buildingItem.id %}
+                        <tr><td> Data: {{row}}</td></tr>
+                       
+                        <tr style="display: none;"><td colspan="2"> <input type="text" class="{{row}}"  value=""  /></td></tr>
+                        <tr class="{{row}}/row" > 
+                          <td colspan="1"  class="{{row}}/1" id="{{building.buildingName}}_{{building.buildingTypeLength}}/room_{{item.buildingItemLength}}/{{rowsLength}}/1" ></td>
+                          <td colspan="1" class="{{row}}/2" oninput="calculateVal(this)" contenteditable='true'>{{row.data2td}}</td>
+                          <td colspan="1" class="{{row}}/3" >{{row.data3td}}</td>
+                          <td colspan="1" class="{{row}}/4" oninput="calculateVal(this)" contenteditable='true'>{{row.data4td}}</td>
+                          <td colspan="1" class="{{row}}/5" oninput="calculateVal(this)" contenteditable='true'>{{row.data5td}}</td>
+                          <td colspan="1" class="{{row}}/6" oninput="calculateVal(this)" contenteditable='true'>{{row.data6td}}</td>
+                          <td colspan="1" class="{{row}}/7" >{{row.data7td}}</td>
+                          <td colspan="1" class="{{row}}/8" oninput="calculateVal(this)" contenteditable='true'>{{row.data8td}}</td>
+                          <td colspan="1" class="{{row}}/9" oninput="calculateVal(this)" contenteditable='true'>{{row.data9td}}</td>
+                          <td colspan="1" class="{{row}}/10" >{{row.data10td}}</td>
+                         </tr>
+
+                         <script type="text/javascript"> 
+                            // var  gotVal = document.getElementById("{{building.buildingName}}_{{building.buildingTypeLength}}_roomNum{{item.buildingItemLength}}").value
+                            // var  rowsLength = $(`.{{building.buildingName}}_{{building.buildingTypeLength}}-room_{{item.buildingItemLength}}`).length + 1
+                              
+                            // document.getElementsByClassName('{{row}}')[0].value = rowsLength
+                            // document.getElementsByClassName('{{row}}')[0].id = `{{building.buildingName}}_{{building.buildingTypeLength}}/room_{{item.buildingItemLength}}/${rowsLength}`
+                            
+                            // document.getElementsByClassName('{{row}}/row')[0].id = `{{building.buildingName}}_{{building.buildingTypeLength}}/room_{{item.buildingItemLength}}/${rowsLength}/row`
+                            
+                            // document.getElementsByClassName('{{row}}/1')[0].id = `{{building.buildingName}}_{{building.buildingTypeLength}}/room_{{item.buildingItemLength}}/${rowsLength}/1`
+                            
+                            // document.getElementsByClassName('{{row}}/2')[0].id =  `{{building.buildingName}}_{{building.buildingTypeLength}}/room_{{item.buildingItemLength}}/${rowsLength}/2`
+                            // document.getElementsByClassName('{{row}}/3')[0].id =  `{{building.buildingName}}_{{building.buildingTypeLength}}/room_{{item.buildingItemLength}}/${rowsLength}/3`
+                            // document.getElementsByClassName('{{row}}/4')[0].id =  `{{building.buildingName}}_{{building.buildingTypeLength}}/room_{{item.buildingItemLength}}/${rowsLength}/4`
+                            // document.getElementsByClassName('{{row}}/5')[0].id =  `{{building.buildingName}}_{{building.buildingTypeLength}}/room_{{item.buildingItemLength}}/${rowsLength}/5`
+                            // document.getElementsByClassName('{{row}}/6')[0].id =  `{{building.buildingName}}_{{building.buildingTypeLength}}/room_{{item.buildingItemLength}}/${rowsLength}/6`
+                            // document.getElementsByClassName('{{row}}/7')[0].id =  `{{building.buildingName}}_{{building.buildingTypeLength}}/room_{{item.buildingItemLength}}/${rowsLength}/7`
+                            // document.getElementsByClassName('{{row}}/8')[0].id =  `{{building.buildingName}}_{{building.buildingTypeLength}}/room_{{item.buildingItemLength}}/${rowsLength}/8`
+                            // document.getElementsByClassName('{{row}}/9')[0].id =  `{{building.buildingName}}_{{building.buildingTypeLength}}/room_{{item.buildingItemLength}}/${rowsLength}/9`
+                            // document.getElementsByClassName('{{row}}/10')[0].id =  `{{building.buildingName}}_{{building.buildingTypeLength}}/room_{{item.buildingItemLength}}/${rowsLength}/10`
+
+                            // document.getElementsByClassName('{{row}}/1')[0].innerHTML = gotVal
+
+                            // // data1td = document.getElementsByClassName('{{row}}/2')[0].innerHTML 
+                            // // document.getElementsByClassName('{{row}}/2')[0].innerHTML = data1td
+                            
+                            // document.getElementsByClassName('{{row}}/2')[0].innerHTML = '{{row.data2td}}'
+                            // document.getElementsByClassName('{{row}}/3')[0].innerHTML = '{{row.data3td}}'
+                            // document.getElementsByClassName('{{row}}/4')[0].innerHTML = '{{row.data4td}}'
+                            // document.getElementsByClassName('{{row}}/5')[0].innerHTML = '{{row.data5td}}'
+                            // document.getElementsByClassName('{{row}}/6')[0].innerHTML = '{{row.data6td}}'
+                            // document.getElementsByClassName('{{row}}/7')[0].innerHTML = '{{row.data7td}}'
+                            // document.getElementsByClassName('{{row}}/8')[0].innerHTML = '{{row.data8td}}'
+                            // document.getElementsByClassName('{{row}}/9')[0].innerHTML = '{{row.data9td}}'
+                            // document.getElementsByClassName('{{row}}/10')[0].innerHTML = '{{row.data10td}}'
+                      
+
+                            // document.getElementById(`{{building.buildingName}}_{{building.buildingTypeLength}}/room_{{item.buildingItemLength}}/{{rowsLength}}/1`).innerHTML = gotVal
+                         </script>
+                          
+                          {% endif %}
+                      {% endfor %} 
+                      <tr id="{{building.buildingName}}_{{building.buildingTypeLength}}room_{{item.buildingItemLength}}" class="bordered "  style="text-align:center">
+                           <td colspan="10"  ></td>
+                      </tr>
+
+                          
+
+                      {% endif %}
+                    {% endfor %} 
+                  {% endfor %} 
+                
+                </tbody> -->
+
+                <tbody class="table_output">
+
+                </tbody>
+                
+              </table>
+              <br />
+              <input type="button" id="btnExport" value="Export" hidden/>
+        </div>
+      </div>
+      
+      
+    </div>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+ 
+
+<script>
+    
+function RoomTemplateList(selectObject, roomID)  {
+
+  console.log("this:",selectObject.id)
+  str = selectObject.id
+  splitBuildType = str.split("-");
+  buildingTypeID = splitBuildType[0];
+  
+  console.log("build type id:",buildingTypeID);
+  
+  var value = selectObject.value;
+  console.log("Selected value:",value);
+
+  roomNum = "roomNum"+roomID
+  typeWithRoomID = buildingTypeID+"_"+roomNum
+  roomID = "room"+"_"+roomID
+  console.log("RoomID:",roomID);
+  console.log("buildingtype with room id :",typeWithRoomID)
+
+
+
+  var templateId = selectObject.value; 
+    console.log("Room Input ID:",roomNum);
+    console.log("Template ID",templateId);
+    
+    $.ajax({
+      url: "{% url 'getTemplates' %}",
+      data: {template_id: templateId },
+      success: function(data){
+
+        x = data.templates
+        console.log("Templates Data:",data.templates)
+        console.log("Length of x:",x.length)
+        tempOutput = ''
+
+        for(let i =0  ; i < x.length; i++){
+          gotVal = document.getElementById(typeWithRoomID).value
+          rowsLength = $("."+buildingTypeID+"-"+roomID).length + 1
+          console.log("wwwo:",$(`.${buildingTypeID}-${roomID}`).length, rowsLength );
+          
+          tempOutput = `<tr style="display: none;"><td colspan="2"> <input type="text" id="${buildingTypeID}/${roomID}/${rowsLength}"  value="${rowsLength}"  /></td></tr>
+                        <tr id="${buildingTypeID}/${roomID}/${rowsLength}/row" class="${buildingTypeID}-${roomID}" > 
+                          <td colspan="1" id="${buildingTypeID}/${roomID}/${rowsLength}/1" >${gotVal}</td>
+                          <td colspan="1" id="${buildingTypeID}/${roomID}/${rowsLength}/2" oninput="calculateVal(this)" contenteditable='true'>${data.templates[i].ActivityID__Quantity}</td>
+                          <td colspan="1" id="${buildingTypeID}/${roomID}/${rowsLength}/3" >${data.templates[i].ActivityID__Name}</td>
+                          <td colspan="1" id="${buildingTypeID}/${roomID}/${rowsLength}/4" oninput="calculateVal(this)" contenteditable='true'>0</td>
+                          <td colspan="1" id="${buildingTypeID}/${roomID}/${rowsLength}/5" oninput="calculateVal(this)" contenteditable='true'>${data.templates[i].ActivityID__PricePH}</td>
+                          <td colspan="1" id="${buildingTypeID}/${roomID}/${rowsLength}/6" oninput="calculateVal(this)" contenteditable='true'>0</td>
+                          <td colspan="1" id="${buildingTypeID}/${roomID}/${rowsLength}/7" >${data.templates[i].ActivityID__ActivityCategoryID__Name}</td>
+                          <td colspan="1" id="${buildingTypeID}/${roomID}/${rowsLength}/8" oninput="calculateVal(this)" contenteditable='true'>0</td>
+                          <td colspan="1" id="${buildingTypeID}/${roomID}/${rowsLength}/9" oninput="calculateVal(this)" contenteditable='true'>0</td>
+                          <td colspan="1" id="${buildingTypeID}/${roomID}/${rowsLength}/10" >0</td>
+                         </tr>
+                        `           
+            document.getElementById(typeWithRoomID).value =parseInt( gotVal) + 1
+            $("#"+buildingTypeID+roomID).before(tempOutput)
+       }
+
+            
+            console.log("Selected Object ID:",selectObject.id)
+            resetDropdown(selectObject.id);
+            
+            // $('#'+selectObject.id).get(0). = '0';
+            // $('#'+selectObject.id).prop('selectedIndex',0);
+
+            // $("#"+buildingTypeID+roomID).before(tempOutput)
+          // $("#"+buildingTypeID+roomID).before(tempOutput)
+          // $("#"+roomID).before(tempOutput)
+          //  $("#"+buildingTypeID).before(tempOutput)
+          //  console.log("building type plus id:",buildingTypeID+roomID)
+          //   $("#"+buildingTypeID+roomID).before(tempOutput)
+          // $("#"+roomID).after(tempOutput)
+          // $("#"+roomID).append(tempOutput)
+      }
+    })
+    
+} 
+
+function RoomActivity(selectObject, roomID){
+
+  console.log("this:",selectObject.id)
+
+  
+  str = selectObject.id
+  splitBuildType = str.split("-");
+  splitActivityValue = str.split("/");
+  activityValue = splitActivityValue[1];
+  buildingTypeID = splitBuildType[0];
+  console.log("NEw build type:",buildingTypeID)  
+  console.log("activity val:",activityValue)       
+
+  // var value = selectObject.value;  
+  // console.log("Selected Activity:",value);
+
+  roomNum = "roomNum"+roomID
+  typeWithRoomID = buildingTypeID+"_"+roomNum
+  roomID = "room"+"_"+roomID
+  console.log("RoomID:",roomID);
+  console.log("buildingtype with room id :",typeWithRoomID)
+console.log("activityValue:",activityValue);
+  var activityId = activityValue;
+  tempOutput = ''
+  $.ajax({
+    url: "{% url 'getActivity' %}",
+    data: {activityId:activityId},
+    success: function(data){
+  
+      x= data.ActivityDetail
+      console.log("Activity Columns:",data.ActivityDetail);
+      for(let i =0  ; i < x.length; i++){
+        gotVal = document.getElementById(typeWithRoomID).value
+        rowsLength = $(`.${buildingTypeID}-${roomID}`).length + 1
+        tempOutput += `<tr style="display: none;"><td colspan="2"> <input type="text" id="${buildingTypeID}/${roomID}/${rowsLength}" class="${buildingTypeID}-${roomID}" value="${rowsLength}"  /></td></tr>
+                       <tr id="${buildingTypeID}/${roomID}/${rowsLength}/row" > 
+                          <td colspan="1" id="${buildingTypeID}/${roomID}/${rowsLength}/1" "   >${gotVal}</td>
+                          <td colspan="1" id="${buildingTypeID}/${roomID}/${rowsLength}/2"  oninput="calculateVal(this)" contenteditable='true' >${data.ActivityDetail[i].ActivityID__Quantity}</td>
+                          <td colspan="1" id="${buildingTypeID}/${roomID}/${rowsLength}/3" >Activity Name: ${data.ActivityDetail[i].ActivityID__Name}</td>
+                          <td colspan="1" id="${buildingTypeID}/${roomID}/${rowsLength}/4"  oninput="calculateVal(this)" contenteditable='true' >${data.ActivityDetail[i].QuotationID__Area}</td>
+                          <td colspan="1" id="${buildingTypeID}/${roomID}/${rowsLength}/5"  oninput="calculateVal(this)" contenteditable='true' >${data.ActivityDetail[i].ActivityID__PricePH}</td>
+                          <td colspan="1" id="${buildingTypeID}/${roomID}/${rowsLength}/6"  oninput="calculateVal(this)" contenteditable='true'>0</td>
+                          <td colspan="1" id="${buildingTypeID}/${roomID}/${rowsLength}/7" >${data.ActivityDetail[i].ActivityID__ActivityCategoryID__Name}</td>
+                          <td colspan="1" id="${buildingTypeID}/${roomID}/${rowsLength}/8"  oninput="calculateVal(this)" contenteditable='true' > ${data.ActivityDetail[i].QuotationID__Rooms}</td>
+                          <td colspan="1" id="${buildingTypeID}/${roomID}/${rowsLength}/9"  oninput="calculateVal(this)" contenteditable='true'>0</td>
+                          <td colspan="1" id="${buildingTypeID}/${roomID}/${rowsLength}/10" >${data.ActivityDetail[i].QuotationID__TotalAmount}</td>
+                         </tr>`
+        document.getElementById(typeWithRoomID).value =parseInt( gotVal) + 1
+      }
+      // console.log("Got activity list item details:",data)
+      $("#"+buildingTypeID+roomID).before(tempOutput)
+      resetDropdown(selectObject.id);
+    }
+  }) 
+}
+
+
+function BathTemplateList(selectObject, bathID){
+
+str = selectObject.id
+splitBuildType = str.split("-");
+buildingTypeID = splitBuildType[0];
+
+bathNum = "bathNum"+bathID
+typeWithBathID = buildingTypeID+"_"+bathNum
+bathID = "bath"+"_"+bathID
+
+var templateId = selectObject.value; 
+
+
+  $.ajax({
+    url: "{% url 'getTemplates' %}",
+    data: {template_id: templateId },
+    success: function(data){
+    tempOutput = ''
+      x = data.templates
+      for(let i =0  ; i < x.length; i++){
+        gotVal = document.getElementById(typeWithBathID).value
+        rowsLength = $("."+buildingTypeID+"-"+bathID).length + 1
+
+        tempOutput = `<tr style="display: none;"><td colspan="2"> <input type="text" id="${buildingTypeID}/${bathID}/${rowsLength}"  value="${rowsLength}"  /></td></tr>
+                        <tr id="${buildingTypeID}/${bathID}/${rowsLength}/row" class="${buildingTypeID}-${bathID}" > 
+                          <td colspan="1" id="${buildingTypeID}/${bathID}/${rowsLength}/1" >${gotVal}</td>
+                          <td colspan="1" id="${buildingTypeID}/${bathID}/${rowsLength}/2" oninput="calculateVal(this)" contenteditable='true'>${data.templates[i].ActivityID__Quantity}</td>
+                          <td colspan="1" id="${buildingTypeID}/${bathID}/${rowsLength}/3" >${data.templates[i].ActivityID__Name}</td>
+                          <td colspan="1" id="${buildingTypeID}/${bathID}/${rowsLength}/4" oninput="calculateVal(this)" contenteditable='true'>0</td>
+                          <td colspan="1" id="${buildingTypeID}/${bathID}/${rowsLength}/5" oninput="calculateVal(this)" contenteditable='true'>${data.templates[i].ActivityID__PricePH}</td>
+                          <td colspan="1" id="${buildingTypeID}/${bathID}/${rowsLength}/6" oninput="calculateVal(this)" contenteditable='true'>0</td>
+                          <td colspan="1" id="${buildingTypeID}/${bathID}/${rowsLength}/7" >${data.templates[i].ActivityID__ActivityCategoryID__Name}</td>
+                          <td colspan="1" id="${buildingTypeID}/${bathID}/${rowsLength}/8" oninput="calculateVal(this)" contenteditable='true'>0</td>
+                          <td colspan="1" id="${buildingTypeID}/${bathID}/${rowsLength}/9" oninput="calculateVal(this)" contenteditable='true'>0</td>
+                          <td colspan="1" id="${buildingTypeID}/${bathID}/${rowsLength}/10" >0</td>
+                         </tr>
+                        `           
+          document.getElementById(typeWithBathID).value =parseInt( gotVal) + 1
+          $("#"+buildingTypeID+bathID).before(tempOutput)
+     }
+          
+          resetDropdown(selectObject.id);
+    }
+  })
+}
+
+function BathActivity(selectObject, bathID){
+
+str = selectObject.id
+splitBuildType = str.split("-");
+splitActivityValue = str.split("/");
+activityValue = splitActivityValue[1];
+buildingTypeID = splitBuildType[0];
+
+bathNum = "bathNum"+bathID
+typeWithBathID = buildingTypeID+"_"+bathNum
+bathID = "bath"+"_"+bathID
+
+var activityId = activityValue;
+
+tempOutput = ''
+$.ajax({
+    url: "{% url 'getActivity' %}",
+    data: {activityId:activityId},
+    success: function(data){
+  
+      x= data.ActivityDetail
+      for(let i =0  ; i < x.length; i++){
+        gotVal = document.getElementById(typeWithBathID).value
+        rowsLength = $(`.${buildingTypeID}-${bathID}`).length + 1
+        tempOutput += `<tr style="display: none;"><td colspan="2"> <input type="text" id="${buildingTypeID}/${bathID}/${rowsLength}" class="${buildingTypeID}-${bathID}" value="${rowsLength}"  /></td></tr>
+                       <tr id="${buildingTypeID}/${bathID}/${rowsLength}/row" > 
+                          <td colspan="1" id="${buildingTypeID}/${bathID}/${rowsLength}/1" "   >${gotVal}</td>
+                          <td colspan="1" id="${buildingTypeID}/${bathID}/${rowsLength}/2"  oninput="calculateVal(this)" contenteditable='true' >${data.ActivityDetail[i].ActivityID__Quantity}</td>
+                          <td colspan="1" id="${buildingTypeID}/${bathID}/${rowsLength}/3" >Activity Name: ${data.ActivityDetail[i].ActivityID__Name}</td>
+                          <td colspan="1" id="${buildingTypeID}/${bathID}/${rowsLength}/4"  oninput="calculateVal(this)" contenteditable='true' >${data.ActivityDetail[i].QuotationID__Area}</td>
+                          <td colspan="1" id="${buildingTypeID}/${bathID}/${rowsLength}/5"  oninput="calculateVal(this)" contenteditable='true' >${data.ActivityDetail[i].ActivityID__PricePH}</td>
+                          <td colspan="1" id="${buildingTypeID}/${bathID}/${rowsLength}/6"  oninput="calculateVal(this)" contenteditable='true'>0</td>
+                          <td colspan="1" id="${buildingTypeID}/${bathID}/${rowsLength}/7" >${data.ActivityDetail[i].ActivityID__ActivityCategoryID__Name}</td>
+                          <td colspan="1" id="${buildingTypeID}/${bathID}/${rowsLength}/8"  oninput="calculateVal(this)" contenteditable='true' > ${data.ActivityDetail[i].QuotationID__Rooms}</td>
+                          <td colspan="1" id="${buildingTypeID}/${bathID}/${rowsLength}/9"  oninput="calculateVal(this)" contenteditable='true'>0</td>
+                          <td colspan="1" id="${buildingTypeID}/${bathID}/${rowsLength}/10" >${data.ActivityDetail[i].QuotationID__TotalAmount}</td>
+                         </tr>`
+        document.getElementById(typeWithBathID).value =parseInt( gotVal) + 1
+    }
+    console.log("bath attach id:",buildingTypeID+bathID)
+    $("#"+buildingTypeID+bathID).before(tempOutput)
+    resetDropdown(selectObject.id);
+  }
+}) 
+}
+
+function KitchenTemplateList(selectObject, kitchenID){
+
+str = selectObject.id
+splitBuildType = str.split("-");
+buildingTypeID = splitBuildType[0];
+
+kitchenNum = "kitchenNum"+kitchenID
+typeWithKitchenID = buildingTypeID+"_"+kitchenNum
+kitchenID = "kitchen"+"_"+kitchenID
+
+var templateId = selectObject.value;
+
+
+  $.ajax({
+    url: "{% url 'getTemplates' %}",
+    data: {template_id: templateId },
+    success: function(data){
+    tempOutput = ''
+      x = data.templates
+      for(let i =0  ; i < x.length; i++){
+        gotVal = document.getElementById(typeWithKitchenID).value
+        rowsLength = $("."+buildingTypeID+"-"+kitchenID).length + 1
+
+        tempOutput = `<tr style="display: none;"><td colspan="2"> <input type="text" id="${buildingTypeID}/${kitchenID}/${rowsLength}"  value="${rowsLength}"  /></td></tr>
+                        <tr id="${buildingTypeID}/${kitchenID}/${rowsLength}/row" class="${buildingTypeID}-${kitchenID}" > 
+                          <td colspan="1" id="${buildingTypeID}/${kitchenID}/${rowsLength}/1" >${gotVal}</td>
+                          <td colspan="1" id="${buildingTypeID}/${kitchenID}/${rowsLength}/2" oninput="calculateVal(this)" contenteditable='true'>${data.templates[i].ActivityID__Quantity}</td>
+                          <td colspan="1" id="${buildingTypeID}/${kitchenID}/${rowsLength}/3" >${data.templates[i].ActivityID__Name}</td>
+                          <td colspan="1" id="${buildingTypeID}/${kitchenID}/${rowsLength}/4" oninput="calculateVal(this)" contenteditable='true'>0</td>
+                          <td colspan="1" id="${buildingTypeID}/${kitchenID}/${rowsLength}/5" oninput="calculateVal(this)" contenteditable='true'>${data.templates[i].ActivityID__PricePH}</td>
+                          <td colspan="1" id="${buildingTypeID}/${kitchenID}/${rowsLength}/6" oninput="calculateVal(this)" contenteditable='true'>0</td>
+                          <td colspan="1" id="${buildingTypeID}/${kitchenID}/${rowsLength}/7" >${data.templates[i].ActivityID__ActivityCategoryID__Name}</td>
+                          <td colspan="1" id="${buildingTypeID}/${kitchenID}/${rowsLength}/8" oninput="calculateVal(this)" contenteditable='true'>0</td>
+                          <td colspan="1" id="${buildingTypeID}/${kitchenID}/${rowsLength}/9" oninput="calculateVal(this)" contenteditable='true'>0</td>
+                          <td colspan="1" id="${buildingTypeID}/${kitchenID}/${rowsLength}/10" >0</td>
+                         </tr>
+                        `   
+          document.getElementById(typeWithKitchenID).value =parseInt( gotVal) + 1
+          $("#"+buildingTypeID+kitchenID).before(tempOutput)
+     }
+          
+          resetDropdown(selectObject.id);
+    }
+  })
+}
+
+function KitchenActivity(selectObject, kitchenID){
+
+str = selectObject.id
+splitBuildType = str.split("-");
+splitActivityValue = str.split("/");
+activityValue = splitActivityValue[1];
+buildingTypeID = splitBuildType[0];
+
+kitchenNum = "kitchenNum"+kitchenID
+typeWithKitchenID = buildingTypeID+"_"+kitchenNum
+kitchenID = "kitchen"+"_"+kitchenID
+
+var activityId = activityValue;
+tempOutput = ''
+
+tempOutput = ''
+$.ajax({
+    url: "{% url 'getActivity' %}",
+    data: {activityId:activityId},
+    success: function(data){
+  
+      x= data.ActivityDetail
+      for(let i =0  ; i < x.length; i++){
+        gotVal = document.getElementById(typeWithKitchenID).value
+        rowsLength = $("."+buildingTypeID+"-"+kitchenID).length + 1
+
+        tempOutput += `<tr style="display: none;"><td colspan="2"> <input type="text" id="${buildingTypeID}/${kitchenID}/${rowsLength}" class="${buildingTypeID}-${kitchenID}" value="${rowsLength}"  /></td></tr>
+                       <tr id="${buildingTypeID}/${kitchenID}/${rowsLength}/row" > 
+                          <td colspan="1" id="${buildingTypeID}/${kitchenID}/${rowsLength}/1" "   >${gotVal}</td>
+                          <td colspan="1" id="${buildingTypeID}/${kitchenID}/${rowsLength}/2"  oninput="calculateVal(this)" contenteditable='true' >${data.ActivityDetail[i].ActivityID__Quantity}</td>
+                          <td colspan="1" id="${buildingTypeID}/${kitchenID}/${rowsLength}/3" >Activity Name: ${data.ActivityDetail[i].ActivityID__Name}</td>
+                          <td colspan="1" id="${buildingTypeID}/${kitchenID}/${rowsLength}/4"  oninput="calculateVal(this)" contenteditable='true' >${data.ActivityDetail[i].QuotationID__Area}</td>
+                          <td colspan="1" id="${buildingTypeID}/${kitchenID}/${rowsLength}/5"  oninput="calculateVal(this)" contenteditable='true' >${data.ActivityDetail[i].ActivityID__PricePH}</td>
+                          <td colspan="1" id="${buildingTypeID}/${kitchenID}/${rowsLength}/6"  oninput="calculateVal(this)" contenteditable='true'>0</td>
+                          <td colspan="1" id="${buildingTypeID}/${kitchenID}/${rowsLength}/7" >${data.ActivityDetail[i].ActivityID__ActivityCategoryID__Name}</td>
+                          <td colspan="1" id="${buildingTypeID}/${kitchenID}/${rowsLength}/8"  oninput="calculateVal(this)" contenteditable='true' > ${data.ActivityDetail[i].QuotationID__Rooms}</td>
+                          <td colspan="1" id="${buildingTypeID}/${kitchenID}/${rowsLength}/9"  oninput="calculateVal(this)" contenteditable='true'>0</td>
+                          <td colspan="1" id="${buildingTypeID}/${kitchenID}/${rowsLength}/10" >${data.ActivityDetail[i].QuotationID__TotalAmount}</td>
+                         </tr>`
+
+        document.getElementById(typeWithKitchenID).value =parseInt( gotVal) + 1
+    }
+    $("#"+buildingTypeID+kitchenID).before(tempOutput)
+    resetDropdown(selectObject.id);
+  }
+}) 
+}
+
+function CustomTemplateList(selectObject, customID){
+
+  str = selectObject.id
+  splitBuildType = str.split("_");
+  splitID = splitBuildType[1];
+  TypeID = splitID.split("-")
+  ID = TypeID[0];
+  buildingType = str.split("-");
+  buildingTypeID = buildingType[0];
+
+  appendRowID = "CustomBuildingType_"+ID+"-activity"
+  typeWithCustomID = "CustomBuildingType_"+ID+"_activity"
+  var templateId = selectObject.value; 
+
+  console.log("boo:",buildingTypeID);
+
+  $.ajax({
+    url: "{% url 'getTemplates' %}",
+    data: {template_id: templateId },
+    success: function(data){
+    tempOutput = ''
+      x = data.templates
+      for(let i =0  ; i < x.length; i++){
+        gotVal = document.getElementById(typeWithCustomID).value
+        rowsLength = $("."+buildingTypeID+"-activityRow").length + 1
+
+        tempOutput = `<tr style="display: none;"><td colspan="2"> <input type="text" id="${buildingTypeID}/${rowsLength}"  value="${rowsLength}"  /></td></tr>
+                        <tr id="${buildingTypeID}/${rowsLength}/row" class="${buildingTypeID}-activityRow" > 
+                          <td colspan="1" id="${buildingTypeID}/${rowsLength}/1" >${gotVal}</td>
+                          <td colspan="1" id="${buildingTypeID}/${rowsLength}/2" oninput="customCalculateVal(this)" contenteditable='true'>${data.templates[i].ActivityID__Quantity}</td>
+                          <td colspan="1" id="${buildingTypeID}/${rowsLength}/3" >${data.templates[i].ActivityID__Name}</td>
+                          <td colspan="1" id="${buildingTypeID}/${rowsLength}/4" oninput="customCalculateVal(this)" contenteditable='true'>0</td>
+                          <td colspan="1" id="${buildingTypeID}/${rowsLength}/5" oninput="customCalculateVal(this)" contenteditable='true'>${data.templates[i].ActivityID__PricePH}</td>
+                          <td colspan="1" id="${buildingTypeID}/${rowsLength}/6" oninput="customCalculateVal(this)" contenteditable='true'>0</td>
+                          <td colspan="1" id="${buildingTypeID}/${rowsLength}/7" >${data.templates[i].ActivityID__ActivityCategoryID__Name}</td>
+                          <td colspan="1" id="${buildingTypeID}/${rowsLength}/8" oninput="customCalculateVal(this)" contenteditable='true'>0</td>
+                          <td colspan="1" id="${buildingTypeID}/${rowsLength}/9" oninput="customCalculateVal(this)" contenteditable='true'>0</td>
+                          <td colspan="1" id="${buildingTypeID}/${rowsLength}/10" >0</td>
+                         </tr>
+                        `           
+          document.getElementById(typeWithCustomID).value =parseInt( gotVal) + 1
+          $("#"+appendRowID).before(tempOutput)
+     }
+          
+          resetDropdown(selectObject.id);
+    }
+  })
+}
+
+function CustomActivity(selectObject, customID){
+  str = selectObject.id
+  splitBuildType = str.split("_");
+  splitID = splitBuildType[1];
+  TypeID = splitID.split("-")
+  ID = TypeID[0];
+  buildingType = str.split("-");
+  buildingTypeID = buildingType[0];
+
+  appendRowID = "CustomBuildingType_"+ID+"-activity"
+  typeWithCustomID = "CustomBuildingType_"+ID+"_activity"
+
+  str = selectObject.id
+  splitActivityValue = str.split("/");
+  activityValue = splitActivityValue[1];
+
+  var activityId = activityValue;
+  console.log("selected:",selectObject.id);
+
+  tempOutput = ''
+$.ajax({
+    url: "{% url 'getActivity' %}",
+    data: {activityId:activityId},
+    success: function(data){
+  
+      x= data.ActivityDetail
+      for(let i =0  ; i < x.length; i++){
+        gotVal = document.getElementById(typeWithCustomID).value
+        rowsLength = $(`.${buildingTypeID}-activityRow`).length + 1
+        tempOutput += `<tr style="display: none;"><td colspan="2"> <input type="text" id="${buildingTypeID}/${rowsLength}" class="${buildingTypeID}-activityRow" value="${rowsLength}"  /></td></tr>
+                       <tr id="${buildingTypeID}/${rowsLength}/row" > 
+                          <td colspan="1" id="${buildingTypeID}/${rowsLength}/1" "   >${gotVal}</td>
+                          <td colspan="1" id="${buildingTypeID}/${rowsLength}/2"  oninput="customCalculateVal(this)" contenteditable='true' >${data.ActivityDetail[i].ActivityID__Quantity}</td>
+                          <td colspan="1" id="${buildingTypeID}/${rowsLength}/3" >Activity Name: ${data.ActivityDetail[i].ActivityID__Name}</td>
+                          <td colspan="1" id="${buildingTypeID}/${rowsLength}/4"  oninput="customCalculateVal(this)" contenteditable='true' >${data.ActivityDetail[i].QuotationID__Area}</td>
+                          <td colspan="1" id="${buildingTypeID}/${rowsLength}/5"  oninput="customCalculateVal(this)" contenteditable='true' >${data.ActivityDetail[i].ActivityID__PricePH}</td>
+                          <td colspan="1" id="${buildingTypeID}/${rowsLength}/6"  oninput="customCalculateVal(this)" contenteditable='true'>0</td>
+                          <td colspan="1" id="${buildingTypeID}/${rowsLength}/7" >${data.ActivityDetail[i].ActivityID__ActivityCategoryID__Name}</td>
+                          <td colspan="1" id="${buildingTypeID}/${rowsLength}/8"  oninput="customCalculateVal(this)" contenteditable='true' > ${data.ActivityDetail[i].QuotationID__Rooms}</td>
+                          <td colspan="1" id="${buildingTypeID}/${rowsLength}/9"  oninput="customCalculateVal(this)" contenteditable='true'>0</td>
+                          <td colspan="1" id="${buildingTypeID}/${rowsLength}/10" >${data.ActivityDetail[i].QuotationID__TotalAmount}</td>
+                         </tr>`
+        document.getElementById(typeWithCustomID).value =parseInt( gotVal) + 1
+    }
+    $("#"+appendRowID).before(tempOutput)
+    resetDropdown(selectObject.id);
+  }
+}) 
+}
+
+
+
+
+
+
+
+
+
+
+      $("#buildingType-box").change(function () {
+        var buildingtypeId = $(this).val(); 
+        console.log("BuildingType ID:",buildingtypeId);
+        $.ajax({
+          url: "{% url 'getSections' %}",
+          data: { buildingtype_Id:buildingtypeId },
+          success: function(data){
+            
+            // console.log("Activities list items:",data.activitiesListItemsData)
+            // console.log("building data:",data.buildingData[0])
+            // console.log("Templates data:", data.templatesData)
+            // console.log("building Rooms:", data.buildingData[0].Rooms)
+            // console.log("CategoriesData:", data.categoriesData)
+            // console.log("ActivitiesData:", data.activitiesData)
+
+            let Rooms = data.buildingData[0].Rooms
+            Bathrooms = data.buildingData[0].Bathrooms
+            Kitchens = data.buildingData[0].Kitchens
+            var templates = data.templatesData
+            categories = data.categoriesData
+            activities = data.activitiesData
+            x = data.buildingData
+            activitiesList = data.activitiesListItemsData
+              
+            let output = ''
+            
+            typeLength = $(`.BuildingType${data.buildingData[0].Name}`).length + 1
+            
+            output+=
+                  `
+                  <tr>
+                      <td colspan='9' align="left" style="padding-left:20px;" ><br /><h2 contenteditable="true" >${data.buildingData[0].Name}:${typeLength}</h2></td>
+                      <td colspan='1'><input id="${data.buildingData[0].Name}_${typeLength}" class="BuildingType${data.buildingData[0].Name}"  value='${typeLength}' hidden/></td> 
+                  </tr>
+                  `
+            buildingTypeID = `${data.buildingData[0].Name}_${typeLength}`;
+            for(let i=1; i <= Rooms; i++ ){
+              output+=`
+                      <tr  >
+                        <td colspan='2' align="left" style="padding-left:20px;" class="active"><b contenteditable="true">Room ${i}</b></td>
+                        <td colspan='6'><input id="${buildingTypeID}_roomNum${i}" value='1' hidden/></td>
+                        <td colspan="1">
+                        <select   id='${buildingTypeID}-templateBox_R${i} ' onchange="RoomTemplateList(this,${i})" data-live-search="true" tabindex="-98" >
+                          <option value="" selected>Choose Template</option> 
+                          `
+                        for(let k=0; k < templates.length;k++){
+                          // console.log("k",k)
+              output+=  `<option value="${data.templatesData[k].TemplateID}" >${data.templatesData[k].Name}</option> 
+                        `
+                        }
+
+              output+= `</select></td><td colspan="1">
+                        <div class="container">
+                           <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" id="activityBtn-${buildingTypeID}" onclick="selectActivity(this)" onclick="gotID(this)" type="button" data-toggle="dropdown">Choose Activity
+                            <span class="caret"></span></button>
+                            <ul class="dropdown-menu " id="myDropdown-forR${i}" >
+                              <input type="text" placeholder="Search.." id="mySearchInput-forR${i}"  onkeyup="getID(this)">
+                             `
+
+                      for(let c=0; c < categories.length ; c++ ){ 
+                          // console.log("value of category i:",i)
+                          output+= `<div class="dropdown-submenu container " >
+                                    <a role="option" class="test-${buildingTypeID} dropdown-item" tabindex="-1" id=""><span class="caret">${categories[c].Name}</span></a>
+                                    <ul class="dropdown-menu">
+                                                              `
+                          for(let j=0; j < activities.length ; j++ ){ 
+                            if(categories[c].ActivityCategoryID === activities[j].ActivityCategoryID ){
+                              
+                              output+= ` <a role="option" class="dropdown-item" tabindex="-1" id='${buildingTypeID}-activityBox_R${i}/${activities[j].ActivityID}' value="" onclick="RoomActivity(this,${i})"  >${activities[j].Name}</a>
+                                       `
+                            }
+                          }
+                output+= ` </ul> </div>`
+                      }    
+
+               output+= `    </ul>
+                            </div>
+                          </div>
+                      </td>
+                          `
+              output+=`
+                      </tr>
+                      <tr id="${buildingTypeID}room_${i}" class="bordered "  style="text-align:center">
+                           <td colspan="10"  ></td>
+                      </tr>
+                      `
+                      // <tr id="room${i}" class="bordered "  style="text-align:center">
+                      //     <td colspan="10"  ></td>
+                      // </tr>
+                      // <tr id="${buildingTypeID}" class="bordered "  style="text-align:center">
+                      //     <td colspan="10"  ></td>
+                      // </tr>
+
+                      // <tr id="${buildingTypeID}room${i}" class="bordered "  style="text-align:center">
+                      //     <td colspan="10"  ></td>
+                      // </tr>
+            }
+            for(let i=1;i <= Bathrooms; i++ ){
+              output+=`<tr>
+                        <td colspan="2" align="left" style="padding-left:20px;" class="active"><b contenteditable="true" >Bathroom ${i}</b></td>
+                        <td colspan='6'><input id="${buildingTypeID}_bathNum${i}" value='1' hidden/></td>
+                        <td colspan="1">
+                        <select id='${buildingTypeID}-templateBox_B${i} ' onchange="BathTemplateList(this,${i})" data-live-search="true" tabindex="-98"  >
+                          <option value="" selected>Choose Template</option> 
+                          `
+                        for(let k=0; k< templates.length;k++){
+                          // console.log("k",k)
+              output+=  `<option value="${data.templatesData[k].TemplateID}" >${data.templatesData[k].Name}</option> 
+                        `
+                        }
+              
+              output+= `</select></td><td colspan="1">
+                        <div class="container">
+                           <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" id="activityBtn-${buildingTypeID}" onclick="selectActivity(this)" type="button" data-toggle="dropdown">Choose Activity
+                            <span class="caret"></span></button>
+                            <ul class="dropdown-menu " id="myDropdown-forB${i}" >
+                              <input type="text" placeholder="Search.." id="mySearchInput-forB${i}"  onkeyup="getID(this)">
+                             `
+
+                      for(let c=0; c < categories.length ; c++ ){ 
+                          // console.log("value of category i:",i)
+                          output+= `<div class="dropdown-submenu container " >
+                                    <a role="option" class="test-${buildingTypeID} dropdown-item" tabindex="-1" id=""><span class="caret">${categories[c].Name}</span></a>
+                                    <ul class="dropdown-menu">
+                                                              `
+                          for(let j=0; j < activities.length ; j++ ){ 
+                            if(categories[c].ActivityCategoryID === activities[j].ActivityCategoryID ){
+                              
+                              output+= ` <a role="option" class="dropdown-item" tabindex="-1" id='${buildingTypeID}-activityBox_B${i}/${activities[j].ActivityID}' value="" onclick="BathActivity(this,${i})"  >${activities[j].Name}</a>
+                                       `
+                            }
+                          }
+                output+= ` </ul> </div>`
+                      }    
+
+               output+= `    </ul>
+                            </div>
+                          </div>
+                      </td>
+                          `
+              output+=`
+                      </tr>
+                      <tr id="${buildingTypeID}bath_${i}" class="bordered "  style="text-align:center">
+                           <td colspan="10"  ></td>
+                      </tr>
+                      `
+            }
+            for(let i=1; i <= Kitchens; i++ ){
+              output+=`<tr>
+                        <td colspan="2" align="left" style="padding-left:20px;" class="active"><b contenteditable="true">Kitchen ${i}</b></td>
+                        <td colspan='6'><input id="${buildingTypeID}_kitchenNum${i}" value='1' hidden/></td>
+                        <td colspan="1">
+                        <select id='${buildingTypeID}-templateBox_K${i} ' onchange="KitchenTemplateList(this,${i})" data-live-search="true" tabindex="-98" >
+                          <option value="" selected>Choose Template</option> 
+                          `
+                        for(let k=0; k< templates.length;k++){
+                          // console.log("k",k)
+              output+=  `<option value="${data.templatesData[k].TemplateID}" >${data.templatesData[k].Name}</option> 
+                        `
+                        }
+              output+= `</select></td>
+                        <td colspan="1">
+                        <div class="container">
+                           <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" id="activityBtn-${buildingTypeID}" onclick="selectActivity(this)" type="button" data-toggle="dropdown">Choose Activity
+                            <span class="caret"></span></button>
+                            <ul class="dropdown-menu " id="myDropdown-forK${i}" >
+                              <input type="text" placeholder="Search.." id="mySearchInput-forK${i}"  onkeyup="getID(this)">
+                             `
+
+                      for(let c=0; c < categories.length ; c++ ){ 
+                          // console.log("value of category i:",i)
+                          output+= `<div class="dropdown-submenu container " >
+                                    <a role="option" class="test-${buildingTypeID} dropdown-item" tabindex="-1" id=""><span class="caret">${categories[c].Name}</span></a>
+                                    <ul class="dropdown-menu">
+                                                              `
+                          for(let j=0; j < activities.length ; j++ ){ 
+                            if(categories[c].ActivityCategoryID === activities[j].ActivityCategoryID ){
+                              
+                              output+= ` <a role="option" class="dropdown-item" tabindex="-1" id='${buildingTypeID}-activityBox_K${i}/${activities[j].ActivityID}' value="" onclick="KitchenActivity(this,${i})"  >${activities[j].Name}</a>
+                                       `
+                            }
+                          }
+                output+= ` </ul> </div>`
+                      }    
+
+               output+= `    </ul>
+                            </div>
+                          </div>
+                      </td>
+                          `
+              output+=`
+                      </tr>
+                      <tr id="${buildingTypeID}kitchen_${i}" class="bordered "  style="text-align:center">
+                           <td colspan="10"  ></td>
+                      </tr>
+                      `
+            } 
+
+            output+=
+                  `
+                  <tr id="total-${data.buildingData[0].Name}_${typeLength}" class="${data.buildingData[0].Name}_${typeLength}/${Rooms}/${Bathrooms}/${Kitchens}" >
+                    
+                       <td colspan='1' id="t1-${data.buildingData[0].Name}_${typeLength}" ><h5 style="font-weight: bold;">Total</h5></td>
+                       <td colspan='1' id="t2-${data.buildingData[0].Name}_${typeLength}" >Total</td>
+                       <td colspan='1' ></td> 
+                       <td colspan='1' id="t4-${data.buildingData[0].Name}_${typeLength}" >Total</td>
+                       <td colspan='1' id="t5-${data.buildingData[0].Name}_${typeLength}" >Total</td>
+                       <td colspan='1' id="t6-${data.buildingData[0].Name}_${typeLength}" >Total</td>
+                       <td colspan='1' ></td>
+                       <td colspan='1' id="t8-${data.buildingData[0].Name}_${typeLength}" >Total</td>
+                       <td colspan='1' id="t9-${data.buildingData[0].Name}_${typeLength}" >Total</td>
+                       <td colspan='1' id="t10-${data.buildingData[0].Name}_${typeLength}" >Total</td>
+                  </tr>
+             `
+            $(".table_output").append(output);   
+            runSelect();
+            // insert_Row();
+            // runActivitySelect();
+            $('#buildingType-box').prop('selectedIndex',0);
+          }        
+        })
+      });
+
+
+
+
+      $("#activities-box").change(function () {
+        var activityId = $(this).val(); 
+        console.log("Activity ID",activityId);
+      });
+
+      
+</script>
+<script>
+function runSelect(){
+   $('select').selectpicker();
+}
+  function getID(Object){
+    // console.log("got id:",Object.id);
+    str = Object.id
+    lastPartOfId = str.split('-')
+    // console.log("splited:",lastPartOfId);
+    gotID = lastPartOfId[1]
+    // console.log(" GOT splited:",gotID);
+    console.log("pppp:",gotID);
+    filterFunction(Object.id,gotID);
+
+  }
+function filterFunction(ID,gotID) {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById(ID);
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown"+"-"+gotID);
+  console.log("idsssss:","myDropdown"+"-"+gotID,ID);
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+
+function selectActivity(object){
+  console.log("ooooo:",object.id);
+  gotID = object.id
+  splitedID = gotID.split("-")
+  buildingTypeID = splitedID[1]
+  console.log("GOT ID:",buildingTypeID);
+
+  runActivitySelect(buildingTypeID)
+}
+
+function runActivitySelect(gotIDoFbuildType){
+  $('.dropdown-submenu a.test-'+gotIDoFbuildType).mouseover( function(e){
+    console.log("hove:");
+    $(this).next('ul').toggle();
+    $(this).css('cursor','pointer')
+    $(this).next('ul').css('cursor','pointer')
+    e.stopPropagation();
+    e.preventDefault();
+  });
+  // .mousemove(function(e){
+  //   $(this).next('ul').toggle();
+  //   e.stopPropagation();
+  //   e.preventDefault();
+  // });
+}
+function resetDropdown(selectID){
+  var dropDown = document.getElementById(selectID); 
+  dropDown.selectedIndex = 0; 
+}
+
+function calculateVal(Object){
+  clickedID = Object.id
+  splitedID = clickedID.split('/')
+  collectedID = splitedID[0]
+  collectedID += "/"+splitedID[1]
+  collectedID += "/"+splitedID[2]+"/"
+  // dataRowID = splitedID[0] + "/" +splitedID[1] + "/" +splitedID[2]
+  
+  // buildingTypeAndlength = splitedID[0].split('_')
+  // buildingItemAndlength = splitedID[1].split('_')
+  
+  // buildingTypeName = buildingTypeAndlength[0]
+  // buildingTypeLength = buildingTypeAndlength[1]
+  // buildingItemName = buildingItemAndlength[0]
+  // buildingItemLength = buildingItemAndlength[1]
+
+  // buildingType = splitedID[0]
+  // buildingItem = splitedID[1]
+
+
+  // console.log("row id:",Object.id);
+  // console.log("splited buil bl bi il:",buildingType,buildingTypeLength,buildingItem,buildingItemLength);
+
+  data1td = document.getElementById(collectedID+1).innerHTML
+  data2td = document.getElementById(collectedID+2).innerHTML
+  data3td = document.getElementById(collectedID+3).innerHTML
+  data4td = document.getElementById(collectedID+4).innerHTML
+  data5td = document.getElementById(collectedID+5).innerHTML
+  data6td = document.getElementById(collectedID+6).innerHTML
+  data7td = document.getElementById(collectedID+7).innerHTML
+  data8td = document.getElementById(collectedID+8).innerHTML
+  data9td = document.getElementById(collectedID+9).innerHTML
+  
+
+  // console.log("row id:",splitedID);
+  data10_td = parseInt(data2td)  + parseInt(data5td) + parseInt(data6td) + parseInt(data8td) + parseInt(data9td)
+  document.getElementById(collectedID+10).innerHTML = data10_td
+
+  data10td = document.getElementById(collectedID+10).innerHTML
+
+
+  console.log("ssssss:",splitedID[0]);
+
+  buildingTypeTotalitems = document.getElementById("total-"+splitedID[0]).className
+  splitItems = buildingTypeTotalitems.split('/')
+  nRooms = splitItems[1]
+  nBathrooms = splitItems[2]
+  nKitchens = splitItems[3]
+  v2 = 0
+  v4 = 0
+  v5 = 0
+  v6 = 0
+  v8 = 0
+  v9 = 0
+  v10 = 0
+  for(r= 1; r <= nRooms; r++ ){
+    console.log("rom:",r);
+    rowsLength = $("."+splitItems[0]+"-"+"room"+"_"+r).length + 1
+    console.log("roex:",rowsLength);
+    for(l=1; l < rowsLength; l++){
+      console.log("t:",splitItems[0]);
+      console.log("r:",`room_${r}`);
+      console.log("le:",l);
+
+      console.log('dddd',document.getElementById(splitItems[0]+"/"+"room"+"_"+r+"/"+l+"/"+5))
+
+     v2 += parseInt(document.getElementById(splitItems[0]+"/"+"room"+"_"+r+"/"+l+"/"+2).innerHTML)
+     v4 += parseInt(document.getElementById(splitItems[0]+"/"+"room"+"_"+r+"/"+l+"/"+4).innerHTML)
+     v5 += parseInt(document.getElementById(splitItems[0]+"/"+"room"+"_"+r+"/"+l+"/"+5).innerHTML)
+     v6 += parseInt(document.getElementById(splitItems[0]+"/"+"room"+"_"+r+"/"+l+"/"+6).innerHTML)
+     v8 += parseInt(document.getElementById(splitItems[0]+"/"+"room"+"_"+r+"/"+l+"/"+8).innerHTML)
+     v9 += parseInt(document.getElementById(splitItems[0]+"/"+"room"+"_"+r+"/"+l+"/"+9).innerHTML)
+     v10 += parseInt(document.getElementById(splitItems[0]+"/"+"room"+"_"+r+"/"+l+"/"+10).innerHTML)
+    }
+  }
+
+  for(b= 1; b <= nBathrooms; b++ ){
+    rowsLength = $("."+splitItems[0]+"-"+"bath"+"_"+b).length + 1
+    console.log("row len:",rowsLength);
+    for(l=1; l < rowsLength; l++){
+     
+     v2 += parseInt(document.getElementById(splitItems[0]+"/"+"bath"+"_"+b+"/"+l+"/"+2).innerHTML)
+     v4 += parseInt(document.getElementById(splitItems[0]+"/"+"bath"+"_"+b+"/"+l+"/"+4).innerHTML)
+     v5 += parseInt(document.getElementById(splitItems[0]+"/"+"bath"+"_"+b+"/"+l+"/"+5).innerHTML)
+     v6 += parseInt(document.getElementById(splitItems[0]+"/"+"bath"+"_"+b+"/"+l+"/"+6).innerHTML)
+     v8 += parseInt(document.getElementById(splitItems[0]+"/"+"bath"+"_"+b+"/"+l+"/"+8).innerHTML)
+     v9 += parseInt(document.getElementById(splitItems[0]+"/"+"bath"+"_"+b+"/"+l+"/"+9).innerHTML)
+     v10 += parseInt(document.getElementById(splitItems[0]+"/"+"bath"+"_"+b+"/"+l+"/"+10).innerHTML)
+    }
+  }
+
+  for(k= 1; k <= nKitchens; k++ ){
+    rowsLength = $("."+splitItems[0]+"-"+"kitchen"+"_"+k).length + 1
+    console.log("row len:",rowsLength);
+    for(l=1; l < rowsLength; l++){
+
+     v2 += parseInt(document.getElementById(splitItems[0]+"/"+"kitchen"+"_"+k+"/"+l+"/"+2).innerHTML)
+     v4 += parseInt(document.getElementById(splitItems[0]+"/"+"kitchen"+"_"+k+"/"+l+"/"+4).innerHTML)
+     v5 += parseInt(document.getElementById(splitItems[0]+"/"+"kitchen"+"_"+k+"/"+l+"/"+5).innerHTML)
+     v6 += parseInt(document.getElementById(splitItems[0]+"/"+"kitchen"+"_"+k+"/"+l+"/"+6).innerHTML)
+     v8 += parseInt(document.getElementById(splitItems[0]+"/"+"kitchen"+"_"+k+"/"+l+"/"+8).innerHTML)
+     v9 += parseInt(document.getElementById(splitItems[0]+"/"+"kitchen"+"_"+k+"/"+l+"/"+9).innerHTML)
+     v10 += parseInt(document.getElementById(splitItems[0]+"/"+"kitchen"+"_"+k+"/"+l+"/"+10).innerHTML)
+    }
+  }
+  document.getElementById("t2-"+splitItems[0]).innerHTML = v2
+  document.getElementById("t4-"+splitItems[0]).innerHTML = v4
+  document.getElementById("t5-"+splitItems[0]).innerHTML = v5
+  document.getElementById("t6-"+splitItems[0]).innerHTML = v6
+  document.getElementById("t8-"+splitItems[0]).innerHTML = v8
+  document.getElementById("t9-"+splitItems[0]).innerHTML = v9
+  document.getElementById("t10-"+splitItems[0]).innerHTML = v10
+
+
+
+  // console.log("see");
+  // console.log("total:",total);
+  // console.log("v2:",v2);
+  //  console.log("nAME:",buildingTypeName,buildingItemName);
+  // $.ajax({
+  //   url: "{% url 'saveRowData' %}",
+  //   data: { 
+  //     buildingType : buildingType,
+  //     buildingTypeName : buildingTypeName,
+  //     buildingTypeLength : buildingTypeLength,
+  //     buildingItem : buildingItem,
+  //     buildingItemName : buildingItemName,
+  //     buildingItemLength : buildingItemLength,
+  //     dataRowID : dataRowID ,
+  //           data1td:data1td,
+  //           data2td:data2td,
+  //           data3td:data3td,
+  //           data4td:data4td,
+  //           data5td:data5td,
+  //           data6td:data6td,
+  //           data7td:data7td,
+  //           data8td:data8td,
+  //           data8td:data9td,
+  //           data10td:data10td,
+  //   },
+  //   success: function(data){
+  //     console.log("Saved data");
+  //   }
+  // })
+  
+  
+}
+
+
+
+$(document).ready(function(){
+    runSelect()
+    // runActivitySelect()
+    filterFunction()
+})
+
+$("body").on("click", "#btnExport", function () {
+            html2canvas($('#tblCustomers')[0], {
+                onrendered: function (canvas) {
+                    var data = canvas.toDataURL();
+                    var docDefinition = {
+                        content: [{
+                            image: data,
+                            width: 500
+                        }]
+                    };
+                    pdfMake.createPdf(docDefinition).download("Activity-Details.pdf");
+                }
+            });
+});
+
+
+$(window).bind('beforeunload', function(){
+        return 'Changes you made may not be saved.';
+});
+
+function insert_Row()
+{
+    var xTable = document.getElementById('tblCustomers');
+    var index = xTable.rows.length ;
+    var tr = xTable.insertRow(index);
+    // tr.innerHTML = `<td colspan='9' align="left" style="padding-left:20px;" ><br /><h2 contenteditable="true" >Activity Name</h2></td>` ;
+    // var index = xTable.rows.length ;
+    // var tr = xTable.insertRow(index);
+    // tr.innerHTML  = `<td colspan=12 ><input type='text' name='activityItem' placeholder='Details' class='form-control' ></td>`; 
+    $.ajax({
+      url: "{% url 'addCustomActivity' %}",
+      success: function(data){
+          templates = data.templatesData
+          categories = data.categoriesData
+          activities = data.activitiesData
+
+          let output = ''
+            
+          typeLength = $(`.CustomBuildingType`).length + 1
+
+          output+=
+                  `
+                  <tr>
+                      <td colspan='9' align="left" style="padding-left:20px;" ><br /><h2 contenteditable="true"  >New Activity:${typeLength}</h2></td>
+                      <td colspan='1'><input id="CustomBuildingType_${typeLength}" class="CustomBuildingType"  value='${typeLength}' hidden/></td> 
+                  </tr>
+                  `
+          buildingTypeID = `CustomBuildingType_${typeLength}`;
+
+          output+=`
+                      <tr  >
+                        <td colspan='2' align="left" style="padding-left:20px;" class="active"><b contenteditable="true" >Activity</b></td>
+                        <td colspan='6'><input id="${buildingTypeID}_activity" value='1' hidden/></td>
+                        <td colspan="1">
+                        <select   id='${buildingTypeID}-templateBox' onchange="CustomTemplateList(this,${typeLength})" data-live-search="true" tabindex="-98" >
+                          <option value="" selected>Choose Template</option> 
+                          `
+                          for(let k=0; k < templates.length;k++){
+              output+=  `<option value="${data.templatesData[k].TemplateID}" >${data.templatesData[k].Name}</option> 
+                        `
+                        }
+
+              output+= `</select></td><td colspan="1">
+                        <div class="container">
+                           <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" id="activityBtn-${buildingTypeID}" onclick="selectActivity(this)" type="button" data-toggle="dropdown">Choose Activity
+                            <span class="caret"></span></button>
+                            <ul class="dropdown-menu " id="myDropdown-for${buildingTypeID}" >
+                              <input type="text" placeholder="Search.." id="mySearchInput-for${buildingTypeID}"  onkeyup="getID(this)">
+                             `
+
+                      for(let c=0; c < categories.length ; c++ ){ 
+                          output+= `<div class="dropdown-submenu container " >
+                                    <a role="option" class="test-${buildingTypeID} dropdown-item" tabindex="-1" id=""><span class="caret">${categories[c].Name}</span></a>
+                                    <ul class="dropdown-menu">
+                                                              `
+                          for(let j=0; j < activities.length ; j++ ){ 
+                            if(categories[c].ActivityCategoryID === activities[j].ActivityCategoryID ){
+                              
+                              output+= ` <a role="option" class="dropdown-item" tabindex="-1" id='${buildingTypeID}-activityBox/${activities[j].ActivityID}' value="" onclick="CustomActivity(this,${typeLength})"  >${activities[j].Name}</a>
+                                       `
+                            }
+                          }
+                output+= ` </ul> </div>`
+                      }    
+
+               output+= `    </ul>
+                            </div>
+                          </div>
+                      </td>
+                          `
+              output+=`
+                      </tr>
+                      <tr id="${buildingTypeID}-activity" class="bordered "  style="text-align:center">
+                           <td colspan="10"  ></td>
+                      </tr>
+                      `
+          rowsLength = $("."+buildingTypeID+"-activityRow").length + 1
+          output+=
+                  `
+                  <tr id="total-CustomBuildingType_${typeLength}" class="CustomBuildingType_${typeLength}/${rowsLength}" >
+                    
+                       <td colspan='1' id="t1-CustomBuildingType_${typeLength}" ><h5 style="font-weight: bold;">Total</h5></td>
+                       <td colspan='1' id="t2-CustomBuildingType_${typeLength}" >Total</td>
+                       <td colspan='1' ></td> 
+                       <td colspan='1' id="t4-CustomBuildingType_${typeLength}" >Total</td>
+                       <td colspan='1' id="t5-CustomBuildingType_${typeLength}" >Total</td>
+                       <td colspan='1' id="t6-CustomBuildingType_${typeLength}" >Total</td>
+                       <td colspan='1' ></td>
+                       <td colspan='1' id="t8-CustomBuildingType_${typeLength}" >Total</td>
+                       <td colspan='1' id="t9-CustomBuildingType_${typeLength}" >Total</td>
+                       <td colspan='1' id="t10-CustomBuildingType_${typeLength}" >Total</td>
+                  </tr>
+             `
+            $(".table_output").append(output);   
+            runSelect();
+            // insert_Row();
+            // runActivitySelect();
+            
+      }
+    })
+}
+
+function customCalculateVal(object){
+  clickedID = object.id
+  console.log("clicked:",object.id);
+  buildType = clickedID.split("/")
+  buildingTypeID = buildType[0]
+  cRow = buildType[1]
+
+  rowsLength = $(`.${buildingTypeID}-activityRow`).length + 1
+
+  console.log("type with length:",buildingTypeID,rowsLength,cRow);
+
+  data1td = document.getElementById(`${buildingTypeID}/${cRow}/`+1).innerHTML
+  data2td = document.getElementById(`${buildingTypeID}/${cRow}/`+2).innerHTML
+  data3td = document.getElementById(`${buildingTypeID}/${cRow}/`+3).innerHTML
+  data4td = document.getElementById(`${buildingTypeID}/${cRow}/`+4).innerHTML
+  data5td = document.getElementById(`${buildingTypeID}/${cRow}/`+5).innerHTML
+  data6td = document.getElementById(`${buildingTypeID}/${cRow}/`+6).innerHTML
+  data7td = document.getElementById(`${buildingTypeID}/${cRow}/`+7).innerHTML
+  data8td = document.getElementById(`${buildingTypeID}/${cRow}/`+8).innerHTML
+  data9td = document.getElementById(`${buildingTypeID}/${cRow}/`+9).innerHTML
+
+  data10_td = parseInt(data2td)  + parseInt(data5td) + parseInt(data6td) + parseInt(data8td) + parseInt(data9td)
+  document.getElementById(`${buildingTypeID}/${cRow}/`+10).innerHTML = data10_td
+
+  data10td = document.getElementById(`${buildingTypeID}/${cRow}/`+10).innerHTML
+
+  v2 = 0
+  v4 = 0
+  v5 = 0
+  v6 = 0
+  v8 = 0
+  v9 = 0
+  v10 = 0
+  
+  for(l=1; l < rowsLength; l++){
+
+      // console.log('dddd',document.getElementById(splitItems[0]+"/"+"room"+"_"+r+"/"+l+"/"+5))
+
+     v2 += parseInt(document.getElementById(buildingTypeID+"/"+l+"/"+2).innerHTML)
+     v4 += parseInt(document.getElementById(buildingTypeID+"/"+l+"/"+4).innerHTML)
+     v5 += parseInt(document.getElementById(buildingTypeID+"/"+l+"/"+5).innerHTML)
+     v6 += parseInt(document.getElementById(buildingTypeID+"/"+l+"/"+6).innerHTML)
+     v8 += parseInt(document.getElementById(buildingTypeID+"/"+l+"/"+8).innerHTML)
+     v9 += parseInt(document.getElementById(buildingTypeID+"/"+l+"/"+9).innerHTML)
+     v10 += parseInt(document.getElementById(buildingTypeID+"/"+l+"/"+10).innerHTML)
+  }
+
+  document.getElementById("t2-"+buildingTypeID).innerHTML = v2
+  document.getElementById("t4-"+buildingTypeID).innerHTML = v4
+  document.getElementById("t5-"+buildingTypeID).innerHTML = v5
+  document.getElementById("t6-"+buildingTypeID).innerHTML = v6
+  document.getElementById("t8-"+buildingTypeID).innerHTML = v8
+  document.getElementById("t9-"+buildingTypeID).innerHTML = v9
+  document.getElementById("t10-"+buildingTypeID).innerHTML = v10
+
+
+
+}
+    
+</script>
+
+
+
+</body>
+
+</html>

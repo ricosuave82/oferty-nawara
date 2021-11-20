@@ -1,0 +1,89 @@
+ <tbody class="table_output">
+                  {% if userDetails %}
+                  {% for user in userDetails %}
+                  {% if user.dataRowID %}
+                  
+                  {% ifchanged item.buildingType %}
+
+                  <tr><td>"changed: "{{ item.buildingType }}</td></tr>
+                   
+                  {% endifchanged %}
+                  
+                  
+                  
+                  <tr><td>"not changed: "{{ item.buildingType }}</td></tr>
+                  
+                  
+                  {% endif %} 
+                  {% endfor %}
+                  {% endif %} 
+                </tbody>
+
+===========================================
+class UserData(models.Model):
+    buildingType = models.CharField(max_length=100, null=False)
+    buildingTypeLength = models.CharField(max_length=100, null=False)
+    buildingItem = models.CharField(max_length=100, null=False)
+    buildingItemLength = models.CharField(max_length=100, null=False)
+    dataRowID = models.CharField(max_length=100, null=False)
+    data1td = models.CharField(max_length=100, null=False)
+    data2td = models.CharField(max_length=100, null=True)
+    data3td = models.CharField(max_length=100, null=False)
+    data4td = models.CharField(max_length=100, null=True)
+    data5td = models.CharField(max_length=100, null=True)
+    data6td = models.CharField(max_length=100, null=True)
+    data7td = models.CharField(max_length=100, null=False)
+    data8td = models.CharField(max_length=100, null=True)
+    data9td = models.CharField(max_length=100, null=True)
+    data10td = models.CharField(max_length=100, null=False)
+
+    def __str__(self):
+        return self.dataRowID
+===============================================
+
+def dashboard(request):
+    # BuildingTypesList = []
+    # BuildingTypeItems = []
+    # CountOfAddedBuildingTypes = UserData.objects.values('buildingType').distinct().count()
+    # CountOfAddedBuildItems = UserData.objects.values('buildingItem').distinct().count()
+    # addedBuildingTypes = UserData.objects.values('buildingType').distinct()
+    # AddedBuildItems = UserData.objects.values('buildingItem').distinct()
+    # tlist = list(addedBuildingTypes)
+    # ilist = list(AddedBuildItems)
+    # for t in tlist:
+    #     # BuildingTypesList.append(l["buildingType"])
+    #     BuildingTypesList.append(t)
+    #     # print("type:",BuildingTypesList)
+    
+    # for i in ilist:
+    #     BuildingTypeItems.append(i)
+    #     # print("item:",BuildingTypeItems)
+
+    # UserObjects = []
+    # # for obj in userDetails:
+    # #     print(obj.buildingType)
+    # #     print(obj.buildingTypeLength)
+    #     # buildItems = UserData.objects.filter(buildingType=obj.buildingType,buildingTypeLength=obj.buildingTypeLength).values('buildingItem').distinct().count()
+        
+    #     # print(obj.buildingItem)
+    #     # print(obj.buildingItemLength)
+    #     # print("buildItems:",buildItems)
+
+    # bT = addedBuildingTypes[0]["buildingType"]
+    # countOfBuildType = UserData.objects.filter(buildingType=bT).count()   #how much time a building is added
+    
+    # maxVal = UserData.objects.filter(buildingType=bT).aggregate(Max('buildingTypeLength'))
+    # print(maxVal,countOfBuildType)
+
+
+    userDetails = UserData.objects.order_by('buildingType','buildingTypeLength','buildingItem','buildingItemLength')
+    for user in userDetails:
+        print("user:",user.buildingType,user.buildingTypeLength,user.buildingItem,user.buildingItemLength,user.dataRowID)
+    
+
+    buildingTypes = BuildingType.objects.all()
+    templates = Template.objects.all()
+    activities = Activity.objects.all()
+    subactivities = ActivityListItem.objects.all()
+
+    return render(request, 'index.html', {"buildingTypes":buildingTypes,"templates":templates,"activities":activities,"subactivities":subactivities,'userDetails':userDetails} )
